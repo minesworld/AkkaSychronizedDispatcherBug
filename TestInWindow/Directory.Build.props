@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project>
-    <PropertyGroup>
-        <BaseOutputPath>E:\vstmp\AkkaSynchronizedDispatcherBug\TestInWindow\bin\</BaseOutputPath>
-        <BaseIntermediateOutputPath>E:\vstmp\AkkaSynchronizedDispatcherBug\TestInWindow\obj\</BaseIntermediateOutputPath>
-  </PropertyGroup>    
-</Project>
