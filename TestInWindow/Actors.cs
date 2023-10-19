@@ -55,15 +55,8 @@ namespace AkkaSychronizedDispatcherBug
         {
             Receive<Tick>(message =>
             {
-                try
-                {
-                    counter += 1;
-                    ReceiverRef.Tell(counter);
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine($"before: {ex}");
-                }
+                counter += 1;
+                ReceiverRef.Tell(counter);
             });
         }
     }
