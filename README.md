@@ -1,4 +1,6 @@
-Having `App.xaml.cs` open two windows and debugging it will create an **'Access violation'** while starting without debugging **does not**...
+Having `App.xaml.cs` open **two** windows and debugging it will create an **'Access violation'** while starting without debugging **does not**...
+
+Starting with or without debugger attached works fine if **only one** window is created.
 
 ```
 'TestInWindow.exe' (CoreCLR: DefaultDomain): Loaded 'E:\vstmp\AkkaSynchronizedDispatcherBug\TestInWindow\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX\System.Private.CoreLib.dll'. 
