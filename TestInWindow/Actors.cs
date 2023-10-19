@@ -1,6 +1,5 @@
 ﻿using Akka.Actor;
 using Akka.Configuration;
-using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml;
 using System;
 using System.IO;
@@ -75,7 +74,6 @@ namespace AkkaSychronizedDispatcherBug
     }
 
 
-    [ObservableObject]
     public partial class CounterDisplayActor : ReceiveActor
     {
         protected ICounted Setable { get; init; }
