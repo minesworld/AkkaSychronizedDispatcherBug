@@ -76,7 +76,8 @@ namespace AkkaSychronizedDispatcherBug
             Become(Working); // makes no difference - could be declared in WebView2Actor().
         }
 
-        public CounterDisplayActor(ICounted setable) : base() {
+        public CounterDisplayActor(ICounted setable) : base() 
+        {
             Setable = setable;
         }
 
