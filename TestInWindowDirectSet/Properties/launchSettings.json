@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TestInWindowDirectSet (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TestInWindowDirectSet (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

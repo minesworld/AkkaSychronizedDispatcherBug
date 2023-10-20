@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TestViaDispatcherQueue (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TestViaDispatcherQueue (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

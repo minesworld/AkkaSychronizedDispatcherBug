@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /TestInWindow/Directory.Build.props
+/TestInWindowDirectSet/Directory.Build.props
+/TestViaDispatcherQueue/Directory.Build.props
+/TestActorCreatedByActor/Directory.Build.props

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TestActorCreatedByActor (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TestActorCreatedByActor (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
