@@ -8,10 +8,12 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics;
@@ -37,8 +39,18 @@ namespace TestInWindowDirectSet
                 appWindow.Resize(new SizeInt32(600, 200));
             }
 
+            System.Diagnostics.Debug.WriteLine("before");
+
+            if (SynchronizationContext.Current == null)
+            {
+                System.Diagnostics.Debug.WriteLine("no context!");
+                Debugger.Break();
+            }
+
             // create a TimeSourceActor and CounterDisplayActor which uses this instance to update the Counted value via setter
             Creator.CreateActorsDisplayingCounted_(CountedTextBlock);
+
+            System.Diagnostics.Debug.WriteLine("after");
         }
     }
 }

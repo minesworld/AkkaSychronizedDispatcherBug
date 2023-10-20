@@ -2,6 +2,28 @@ Having `App.xaml.cs` open **two** windows and debugging it will create an **'Acc
 
 Starting with or without debugger attached works fine if **only one** window is created.
 
+
+The solution contains different projects all behaving the same way:
+
+- TestInWindow
+  + TextBox bound to a property of Window created using CommunityToolkit.MVVM . The property value is updated from an Actor dispatched synchronized.
+- TestInWindowDirectSet
+  + TestBox.Text set from an Actor dispatched synchronized.
+- TestViaDispatcherQueue
+  + TextBox bound to a property of Window created using CommunityToolkit.MVVM . The property value is updated from an unsynchronized actor via the Windows DispatcherQueue.TryEnqueue
+
+All projects above create the Actors within the Windows creation method after this.InitializeComponent()
+
+- TestActorCreatedByActor
+  + TextBox bound to a property of Window created using CommunityToolkit.MVVM . The property value is updated from an unsynchronized actor via the Windows DispatcherQueue.TryEnqueue
+  + the Actor is created from another already running actor
+
+The debug output is:
+*before* *after* the Actor is created / sending a message to create
+*no context!* if `SynchronizationContext.Current == null` before creating the Actor / sending a message to create
+
+
+
 ```
 'TestInWindow.exe' (CoreCLR: DefaultDomain): Loaded 'E:\vstmp\AkkaSynchronizedDispatcherBug\TestInWindow\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX\System.Private.CoreLib.dll'. 
 'TestInWindow.exe' (CoreCLR: clrhost): Loaded 'E:\vstmp\AkkaSynchronizedDispatcherBug\TestInWindow\bin\x86\Debug\net6.0-windows10.0.19041.0\win10-x86\AppX\TestInWindow.dll'. Symbols loaded.
