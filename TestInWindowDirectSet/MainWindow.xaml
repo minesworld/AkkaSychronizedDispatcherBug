@@ -9,6 +9,6 @@
     mc:Ignorable="d">
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock x:Name="CountedTextBlock" HorizontalAlignment="Center" />
+        <TextBlock x:Name="CountedTextBlock" HorizontalAlignment="Center">no Ticks</TextBlock>
     </StackPanel>
 </Window>

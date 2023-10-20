@@ -27,8 +27,8 @@ namespace TestActorCreatedByActorOnPageLoaded
     public partial class CounterPage : Page, ICounted
     {
         [ObservableProperty]
-        private string counted;
- 
+        private string counted = "no Ticks";
+
         public CounterPage()
         {
             this.InitializeComponent();

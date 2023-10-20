@@ -28,9 +28,9 @@ namespace TestInWindow
     public sealed partial class MainWindow : Window, ICounted
     {
         [ObservableProperty]
-        private string counted;
+        private string counted = "no Ticks";
 
-        public MainWindow()
+        public MainWindow(int index)
         {
             this.InitializeComponent();
 
@@ -40,6 +40,7 @@ namespace TestInWindow
 
             if (appWindow != null)
             {
+                appWindow.Move(new PointInt32(40 + index * 600, 40));
                 appWindow.Resize(new SizeInt32(600, 200));
             }
 

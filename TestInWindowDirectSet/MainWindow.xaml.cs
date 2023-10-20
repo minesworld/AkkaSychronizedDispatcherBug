@@ -1,3 +1,4 @@
+using Akka.Util;
 using AkkaSychronizedDispatcherBug;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -26,7 +27,7 @@ namespace TestInWindowDirectSet
     public sealed partial class MainWindow : Window
     {
 
-        public MainWindow()
+        public MainWindow(int index)
         {
             this.InitializeComponent();
 
@@ -36,6 +37,7 @@ namespace TestInWindowDirectSet
 
             if (appWindow != null)
             {
+                appWindow.Move(new PointInt32(40 + index * 600, 40));
                 appWindow.Resize(new SizeInt32(600, 200));
             }
 

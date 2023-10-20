@@ -1,3 +1,4 @@
+using Akka.Util;
 using AkkaSychronizedDispatcherBug;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml;
@@ -27,9 +28,9 @@ namespace TestViaDispatcherQueue
     public sealed partial class MainWindow : Window, ICounted
     {
         [ObservableProperty]
-        private string counted;
+        private string counted = "no Ticks";
 
-        public MainWindow()
+        public MainWindow(int index)
         {
             this.InitializeComponent();
 
@@ -39,6 +40,7 @@ namespace TestViaDispatcherQueue
 
             if (appWindow != null)
             {
+                appWindow.Move(new PointInt32(40 + index * 600, 40));
                 appWindow.Resize(new SizeInt32(600, 200));
             }
 
