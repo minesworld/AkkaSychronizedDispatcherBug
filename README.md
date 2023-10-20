@@ -6,17 +6,19 @@ Starting with or without debugger attached works fine if **only one** window is 
 The solution contains different projects all behaving the same way:
 
 - TestInWindow
-  + TextBox bound to a property of Window created using CommunityToolkit.MVVM . The property value is updated from an Actor dispatched synchronized.
+  + `TextBox` bound to a property of `Window` created using `CommunityToolkit.MVVM` . The property value is updated from an `Actor` dispatched synchronized.
 - TestInWindowDirectSet
-  + TestBox.Text set from an Actor dispatched synchronized.
+  + `TestBox.Text` set from an `Actor` dispatched synchronized.
 - TestViaDispatcherQueue
-  + TextBox bound to a property of Window created using CommunityToolkit.MVVM . The property value is updated from an unsynchronized actor via the Windows DispatcherQueue.TryEnqueue
+  + `TextBox` bound to a property of `Window` created using `CommunityToolkit.MVVM` . The property value is updated from an unsynchronized actor via the Windows `DispatcherQueue.TryEnqueue`
 
 All projects above create the Actors within the Windows creation method after this.InitializeComponent()
 
 - TestActorCreatedByActor
-  + TextBox bound to a property of Window created using CommunityToolkit.MVVM . The property value is updated from an unsynchronized actor via the Windows DispatcherQueue.TryEnqueue
-  + the Actor is created from another already running actor
+  + `TextBox` bound to a property of `Window` created using `CommunityToolkit.MVVM` . The property value is updated from an unsynchronized actor via the Windows `DispatcherQueue.TryEnqueue`
+  + the `Actor` is created from another already running actor
+- TestActorCreatedByActorOnPageLoaded
+  + same as TestActorCreatedByActor but the `TextBox` is on its own Page. The message to create the `Actor` updating its value is create after the `Page` is loaded
 
 The debug output is:
 *before* *after* the Actor is created / sending a message to create

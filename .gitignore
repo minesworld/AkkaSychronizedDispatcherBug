@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /TestInWindowDirectSet/Directory.Build.props
 /TestViaDispatcherQueue/Directory.Build.props
 /TestActorCreatedByActor/Directory.Build.props
+/TestActorCreatedByActorOnPageLoaded/Directory.Build.props
